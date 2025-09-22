@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
             <p class="text-lg text-zinc-600 leading-relaxed">We're currently recruiting boys and girls for our <span class="font-bold text-primary">Under 7s, 8s, 9s, 10s, 11s, and 12s teams</span> for the upcoming season. Whether you're new to rugby league or already love the game, the Dolphins have a spot for you!</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
             <div class="bg-white p-8 rounded-xl shadow-lg">
                 <h2 class="text-3xl font-bold text-primary mb-6">Why Join the Dolphins?</h2>
                 <ul class="space-y-4">
@@ -37,6 +37,111 @@ import Layout from '../layouts/Layout.astro';
                 <div class="flex flex-col gap-4">
                     <a href="/registration-form" class="bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-dark transition-all duration-300 transform hover:scale-105">Register Now</a>
                     <a href="/contact" class="bg-zinc-300 text-zinc-800 font-bold py-4 px-8 rounded-lg hover:bg-zinc-400 transition-colors duration-300">Contact Us for More Info</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Season Fixture -->
+        <div class="mt-16 max-w-5xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-primary mb-4">2026 Season Schedule</h2>
+                <p class="text-lg text-zinc-600">Here's what a typical season looks like for our young Dolphins. Training sessions focus on skill development and fun!</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="bg-primary text-white p-4">
+                    <h3 class="text-xl font-bold text-center">May - September Schedule</h3>
+                </div>
+                
+                <div class="divide-y divide-zinc-200">
+                    <!-- Training Sessions -->
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">Sat, May 10</div>
+                            <div class="text-zinc-600">9:00 AM - 10:30 AM</div>
+                            <div class="text-zinc-600">Hastings Park</div>
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 w-fit">Training</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">Sat, May 17</div>
+                            <div class="text-zinc-600">9:00 AM - 11:00 AM</div>
+                            <div class="text-zinc-600">Frankston Park</div>
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 w-fit">Game vs Frankston Blues</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">Sat, May 24</div>
+                            <div class="text-zinc-600">9:00 AM - 10:30 AM</div>
+                            <div class="text-zinc-600">Hastings Park</div>
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 w-fit">Training</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">Sat, May 31</div>
+                            <div class="text-zinc-600">10:00 AM - 12:00 PM</div>
+                            <div class="text-zinc-600">Hastings Park</div>
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 w-fit">Game vs Mornington Tigers</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">Sat, Jun 7</div>
+                            <div class="text-zinc-600">9:00 AM - 10:30 AM</div>
+                            <div class="text-zinc-600">Hastings Park</div>
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 w-fit">Training</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">Sat, Jun 14</div>
+                            <div class="text-zinc-600">9:30 AM - 11:30 AM</div>
+                            <div class="text-zinc-600">Rosebud Recreation Reserve</div>
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 w-fit">Game vs Rosebud Raiders</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">Sat, Jun 21</div>
+                            <div class="text-zinc-600">9:00 AM - 10:30 AM</div>
+                            <div class="text-zinc-600">Hastings Park</div>
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 w-fit">Training</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">Sat, Jun 28</div>
+                            <div class="text-zinc-600">10:00 AM - 12:00 PM</div>
+                            <div class="text-zinc-600">Hastings Park</div>
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 w-fit">Game vs Seaford Sharks</div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 hover:bg-zinc-50 transition-colors duration-200">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                            <div class="font-semibold text-zinc-800">...</div>
+                            <div class="text-zinc-600 italic">continues through</div>
+                            <div class="text-zinc-600 italic">September</div>
+                            <div class="text-zinc-500 text-sm">Full schedule available after registration</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-50 p-4">
+                    <div class="text-center">
+                        <p class="text-sm text-zinc-600 mb-2"><strong>Typical Schedule:</strong> Training every 2nd Saturday, Games every 2nd Saturday</p>
+                        <p class="text-xs text-zinc-500">*Schedule subject to change. Weather and ground conditions may affect timing.</p>
+                    </div>
                 </div>
             </div>
         </div>
