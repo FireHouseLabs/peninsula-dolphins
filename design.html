@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peninsula Dolphins RLFC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F4F5; /* zinc-100 */
+        }
+        /* Custom styles for the brand colors */
+        .bg-primary { background-color: #981335; } /* A slightly darker red for better contrast */
+        .bg-secondary { background-color: #c5a043; }
+        .text-primary { color: #981335; }
+        .text-secondary { color: #c5a043; }
+        .border-primary { border-color: #981335; }
+        .border-secondary { border-color: #c5a043; }
+        .hover\:bg-primary-dark:hover { background-color: #7d102b; }
+        .hover\:bg-secondary-dark:hover { background-color: #ab8c3a; }
+
+        /* Hide all pages by default */
+        .page-content {
+            display: none;
+        }
+        /* Show the active page */
+        .page-content.active {
+            display: block;
+        }
+
+        /* Simple animation for page load */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        .nav-link.active {
+            color: #c5a043;
+        }
+    </style>
+</head>
+<body class="text-zinc-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-primary shadow-lg sticky top-0 z-50 text-white">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#home" class="flex items-center space-x-3 nav-trigger">
+                    <!-- Placeholder Logo SVG -->
+                    <svg class="h-10 w-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 0C50 0 20 20 20 50C20 80 50 100 50 100C50 100 80 80 80 50C80 20 50 0 50 0Z" fill="#c5a043"/>
+                        <path d="M50 10C50 10 25 28 25 50C25 72 50 90 50 90C50 90 75 72 75 50C75 28 50 10 50 10Z" fill="#981335"/>
+                        <path d="M60 40C60 34.4772 55.5228 30 50 30C44.4772 30 40 34.4772 40 40C40 45.5228 44.4772 50 50 50C55.5228 50 60 45.5228 60 40Z" fill="#c5a043"/>
+                    </svg>
+                    <span class="text-xl font-extrabold tracking-tight">Peninsula Dolphins</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link text-lg font-semibold hover:text-secondary transition-colors duration-300 active" data-page="home">Home</a>
+                    <a href="#about" class="nav-link text-lg font-semibold hover:text-secondary transition-colors duration-300" data-page="about">About</a>
+                    <a href="#sponsors" class="nav-link text-lg font-semibold hover:text-secondary transition-colors duration-300" data-page="sponsors">Sponsors</a>
+                    <a href="#merch" class="nav-link text-lg font-semibold hover:text-secondary transition-colors duration-300" data-page="merch">Merch</a>
+                    <a href="#register" class="bg-secondary text-primary font-bold py-2 px-5 rounded-lg hover:bg-secondary-dark transition-colors duration-300 nav-trigger" data-page="register">Register Now</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                 <a href="#home" class="nav-link block py-2 text-lg font-semibold hover:text-secondary transition-colors duration-300 active" data-page="home">Home</a>
+                 <a href="#about" class="nav-link block py-2 text-lg font-semibold hover:text-secondary transition-colors duration-300" data-page="about">About</a>
+                 <a href="#sponsors" class="nav-link block py-2 text-lg font-semibold hover:text-secondary transition-colors duration-300" data-page="sponsors">Sponsors</a>
+                 <a href="#merch" class="nav-link block py-2 text-lg font-semibold hover:text-secondary transition-colors duration-300" data-page="merch">Merch</a>
+                 <a href="#register" class="nav-link block mt-2 bg-secondary text-primary font-bold py-2 px-5 rounded-lg hover:bg-secondary-dark transition-colors duration-300 text-center" data-page="register">Register Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Home Page Content -->
+        <section id="home" class="page-content active fade-in">
+            <!-- Hero Section -->
+            <div class="relative bg-zinc-800 text-white">
+                <img src="https://placehold.co/1600x800/222/FFF?text=Go+Dolphins!" alt="Rugby league action shot" class="absolute inset-0 w-full h-full object-cover opacity-30">
+                <div class="relative container mx-auto px-6 py-24 md:py-32 lg:py-48 text-center">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">Welcome to the Peninsula Dolphins Rugby League Club</h1>
+                    <p class="text-xl md:text-2xl font-light text-zinc-300 max-w-4xl mx-auto">Building community, developing players, and growing the game on the Mornington Peninsula.</p>
+                </div>
+            </div>
+
+            <!-- Intro and Quick Links -->
+            <div class="py-16 md:py-24 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-3xl mx-auto text-center">
+                         <p class="text-lg md:text-xl text-zinc-600 leading-relaxed">
+                            We’re one of the newest rugby league clubs in Victoria, and we’re here to give local boys and girls the chance to play, learn, and love the greatest game of all. At the Peninsula Dolphins, every child gets the opportunity to develop their skills, have fun, and make lifelong friendships.
+                        </p>
+                        <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                           <a href="#register" class="nav-trigger w-full sm:w-auto bg-primary text-white font-bold py-4 px-8 rounded-lg hover:bg-primary-dark transition-all duration-300 transform hover:scale-105" data-page="register">Register Now</a>
+                           <a href="#about" class="nav-trigger w-full sm:w-auto bg-zinc-200 text-zinc-800 font-bold py-4 px-8 rounded-lg hover:bg-zinc-300 transition-all duration-300 transform hover:scale-105" data-page="about">About Us</a>
+                           <a href="#sponsors" class="nav-trigger w-full sm:w-auto bg-zinc-200 text-zinc-800 font-bold py-4 px-8 rounded-lg hover:bg-zinc-300 transition-all duration-300 transform hover:scale-105" data-page="sponsors">Sponsors</a>
+                           <a href="#merch" class="nav-trigger w-full sm:w-auto bg-zinc-200 text-zinc-800 font-bold py-4 px-8 rounded-lg hover:bg-zinc-300 transition-all duration-300 transform hover:scale-105" data-page="merch">Merch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="bg-secondary">
+                 <div class="container mx-auto px-6 py-12 text-center">
+                     <h2 class="text-2xl md:text-3xl font-bold text-primary">“Join the Dolphins in 2026 – spots open now for Under 7s to Under 12s!”</h2>
+                 </div>
+            </div>
+        </section>
+
+        <!-- About Page Content -->
+        <section id="about" class="page-content">
+            <div class="container mx-auto px-6 py-16 md:py-24">
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                     <h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4">Who We Are</h1>
+                     <p class="text-lg text-zinc-600 leading-relaxed">The Peninsula Dolphins Rugby League Club was founded in 2024 to bring rugby league to the Mornington Peninsula. We’re a family-friendly, community-focused club dedicated to providing opportunities for young players to learn the game in a fun, supportive, and inclusive environment.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary">
+                        <h2 class="text-2xl font-bold text-primary mb-4">Mission Statement</h2>
+                        <p class="text-zinc-600 leading-relaxed">To grow the game of rugby league locally by providing pathways for junior players, supporting their development on and off the field, and fostering a strong sense of community.</p>
+                    </div>
+                     <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-secondary">
+                        <h2 class="text-2xl font-bold text-secondary mb-4">Vision</h2>
+                        <p class="text-zinc-600 leading-relaxed">To be the leading rugby league club on the Peninsula, recognised for developing great players, great people, and a lifelong love for the game.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors Page Content -->
+        <section id="sponsors" class="page-content">
+             <div class="container mx-auto px-6 py-16 md:py-24">
+                <div class="max-w-4xl mx-auto text-center mb-16">
+                     <h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4">Proudly Supported by Our Community</h1>
+                     <p class="text-lg text-zinc-600 leading-relaxed">The Peninsula Dolphins wouldn’t be possible without the support of our sponsors. Their generosity helps us provide equipment, jerseys, training facilities, and opportunities for our players.</p>
+                </div>
+
+                <!-- Sponsor Tiers -->
+                <div class="space-y-16">
+                    <!-- Major Sponsor -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-center text-secondary mb-8">Major Sponsor</h2>
+                        <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8">
+                            <img src="https://placehold.co/400x250/cccccc/333333?text=Major+Sponsor" alt="Major Sponsor Logo" class="w-full md:w-1/2 h-auto rounded-lg">
+                            <div class="text-center md:text-left">
+                                <h3 class="text-2xl font-bold text-primary">Sponsor Name</h3>
+                                <p class="mt-2 text-zinc-600">A short blurb about the major sponsor and their contribution to the club. We are extremely grateful for their support.</p>
+                                <a href="#" class="inline-block mt-4 text-primary font-semibold hover:underline">Visit Website &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gold Sponsors -->
+                     <div>
+                        <h2 class="text-3xl font-bold text-center text-secondary mb-8">Gold Sponsors</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                           <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video"><img src="https://placehold.co/200x100/cccccc/333333?text=Gold+Sponsor" alt="Gold Sponsor"></div>
+                           <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video"><img src="https://placehold.co/200x100/cccccc/333333?text=Gold+Sponsor" alt="Gold Sponsor"></div>
+                           <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video"><img src="https://placehold.co/200x100/cccccc/333333?text=Gold+Sponsor" alt="Gold Sponsor"></div>
+                           <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video"><img src="https://placehold.co/200x100/cccccc/333333?text=Gold+Sponsor" alt="Gold Sponsor"></div>
+                        </div>
+                    </div>
+
+                    <!-- Silver & Community -->
+                     <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                           <h2 class="text-3xl font-bold text-center text-zinc-600 mb-8">Silver Sponsors</h2>
+                           <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+                              <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Silver" alt="Silver Sponsor"></div>
+                              <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Silver" alt="Silver Sponsor"></div>
+                              <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Silver" alt="Silver Sponsor"></div>
+                           </div>
+                        </div>
+                         <div>
+                           <h2 class="text-3xl font-bold text-center text-zinc-600 mb-8">Community Partners</h2>
+                           <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
+                              <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Partner" alt="Community Partner"></div>
+                              <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Partner" alt="Community Partner"></div>
+                              <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Partner" alt="Community Partner"></div>
+                           </div>
+                        </div>
+                     </div>
+                </div>
+
+                 <!-- CTA -->
+                <div class="mt-24 text-center bg-white p-12 rounded-lg shadow-md max-w-3xl mx-auto">
+                    <h3 class="text-2xl font-bold text-primary">Interested in sponsoring the Dolphins?</h3>
+                    <p class="mt-2 text-zinc-600">Get in touch with us today to help shape the future of rugby league on the Peninsula.</p>
+                    <a href="#" class="inline-block mt-6 bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-primary-dark transition-colors duration-300">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Merch Page Content -->
+        <section id="merch" class="page-content">
+            <div class="container mx-auto px-6 py-16 md:py-24">
+                 <div class="max-w-4xl mx-auto text-center mb-16">
+                     <h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4">Show Your Dolphin Pride!</h1>
+                     <p class="text-lg text-zinc-600 leading-relaxed">Support the club and wear the colours with pride. Our official Peninsula Dolphins merchandise is now available online and at the club.</p>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Product Card -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="overflow-hidden">
+                           <img src="https://placehold.co/600x600/cccccc/333333?text=Club+Jersey" alt="Club Jersey" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary">Club Jerseys</h3>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="overflow-hidden">
+                           <img src="https://placehold.co/600x600/cccccc/333333?text=Hoodie" alt="Training Hoodie" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary">Training Tees & Hoodies</h3>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                         <div class="overflow-hidden">
+                           <img src="https://placehold.co/600x600/cccccc/333333?text=Hat" alt="Club Hat" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary">Hats & Beanies</h3>
+                        </div>
+                    </div>
+                     <!-- Product Card -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                         <div class="overflow-hidden">
+                           <img src="https://placehold.co/600x600/cccccc/333333?text=Bottle" alt="Drink Bottle" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-primary">Drink Bottles</h3>
+                        </div>
+                    </div>
+                </div>
+                 <div class="text-center mt-16">
+                    <a href="#" class="bg-secondary text-primary font-bold py-4 px-12 rounded-lg text-xl hover:bg-secondary-dark transition-all duration-300 transform hover:scale-105 inline-block">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Page Content -->
+        <section id="register" class="page-content">
+            <div class="container mx-auto px-6 py-16 md:py-24">
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                     <h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4">Register to Play in 2026</h1>
+                     <p class="text-lg text-zinc-600 leading-relaxed">We’re currently recruiting boys and girls for our <span class="font-bold text-primary">Under 7s, 8s, 9s, 10s, 11s, and 12s teams</span> for the upcoming season. Whether you’re new to rugby league or already love the game, the Dolphins have a spot for you!</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto items-center">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h2 class="text-3xl font-bold text-primary mb-6">Why Join the Dolphins?</h2>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-secondary flex-shrink-0 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span>More game time – no overcrowded teams</span>
+                            </li>
+                            <li class="flex items-start">
+                               <svg class="h-6 w-6 text-secondary flex-shrink-0 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span>Qualified coaches and supportive volunteers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="h-6 w-6 text-secondary flex-shrink-0 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span>A family-friendly community</span>
+                            </li>
+                             <li class="flex items-start">
+                                <svg class="h-6 w-6 text-secondary flex-shrink-0 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span>Opportunities to grow with the game</span>
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="bg-zinc-100 p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold text-zinc-800">Ready to join?</h3>
+                        <p class="text-zinc-600 mt-2 mb-6">Secure your spot for the 2026 season today!</p>
+                        <div class="flex flex-col gap-4">
+                            <a href="#" class="bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg hover:bg-primary-dark transition-all duration-300 transform hover:scale-105">Register Now</a>
+                            <a href="#" class="bg-zinc-300 text-zinc-800 font-bold py-4 px-8 rounded-lg hover:bg-zinc-400 transition-colors duration-300">Contact Us for More Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-800 text-zinc-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="text-center">
+                <p>&copy; 2024 Peninsula Dolphins Rugby League Club. All Rights Reserved.</p>
+                <div class="flex justify-center space-x-4 mt-4">
+                     <!-- Social Icons -->
+                    <a href="#" class="hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.494v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg></a>
+                    <a href="#" class="hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navTriggers = document.querySelectorAll('.nav-trigger');
+            const pageContents = document.querySelectorAll('.page-content');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Function to switch pages
+            const showPage = (pageId) => {
+                // Hide all pages
+                pageContents.forEach(page => {
+                    page.classList.remove('active', 'fade-in');
+                });
+
+                // Show the target page
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    // Add fade-in animation after a short delay to ensure display:block is applied first
+                    setTimeout(() => {
+                        targetPage.classList.add('fade-in');
+                    }, 10);
+                }
+
+                // Update active state in nav links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Close mobile menu after navigation
+                mobileMenu.classList.add('hidden');
+
+                // Scroll to top of the page
+                window.scrollTo(0, 0);
+            };
+
+            // Event listeners for all navigation links and buttons
+            const allNavElements = [...navLinks, ...navTriggers];
+
+            allNavElements.forEach(element => {
+                element.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = element.dataset.page || e.currentTarget.getAttribute('href').substring(1);
+                    showPage(pageId);
+                });
+            });
+
+            // Toggle mobile menu
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Check for hash on initial load
+            const initialPage = window.location.hash.substring(1) || 'home';
+            showPage(initialPage);
+
+        });
+    </script>
+</body>
+</html>

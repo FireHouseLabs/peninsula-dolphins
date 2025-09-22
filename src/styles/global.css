@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Peninsula Dolphins Brand Colors */
+@theme {
+  --color-primary: #981335;
+  --color-primary-dark: #7d102b;
+  --color-secondary: #c5a043;
+  --color-secondary-dark: #ab8c3a;
+}
+
+/* Custom font family */
+body {
+  font-family: 'Inter', sans-serif;
+}

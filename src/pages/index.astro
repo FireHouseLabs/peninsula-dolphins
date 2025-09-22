@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import heroImage from '../assets/home_hero.jpg';
+---
+
+<Layout title="Home">
+    <!-- Hero Section -->
+    <div class="relative bg-zinc-800 text-white">
+        <img src={heroImage.src} alt="Peninsula Dolphins team photo" class="absolute inset-0 w-full h-full object-cover opacity-30">
+        <div class="relative container mx-auto px-6 py-24 md:py-32 lg:py-48 text-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">Welcome to the Peninsula Dolphins Rugby League Club</h1>
+            <p class="text-xl md:text-2xl font-light text-zinc-300 max-w-4xl mx-auto">Building community, developing players, and growing the game on the Mornington Peninsula.</p>
+        </div>
+    </div>
+
+    <!-- Intro and Quick Links -->
+    <div class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-xl md:text-2xl lg:text-3xl text-zinc-600 leading-relaxed mb-8">
+                    We're one of the newest rugby league clubs in Victoria, and we're here to give local boys and girls the chance to play, learn, and love the greatest game of all. At the Peninsula Dolphins, every child gets the opportunity to develop their skills, have fun, and make lifelong friendships.
+                </p>
+                <!-- Primary CTA -->
+                <div class="mb-8">
+                    <a href="/register" class="inline-block bg-primary text-white font-bold py-6 px-12 rounded-lg text-xl hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 shadow-lg">Register Now</a>
+                </div>
+                <!-- Secondary Links -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="/about" class="w-full sm:w-auto bg-zinc-200 text-zinc-800 font-semibold py-3 px-6 rounded-lg hover:bg-zinc-300 transition-all duration-300">About Us</a>
+                    <a href="/sponsors" class="w-full sm:w-auto bg-zinc-200 text-zinc-800 font-semibold py-3 px-6 rounded-lg hover:bg-zinc-300 transition-all duration-300">Sponsors</a>
+                    <a href="/merch" class="w-full sm:w-auto bg-zinc-200 text-zinc-800 font-semibold py-3 px-6 rounded-lg hover:bg-zinc-300 transition-all duration-300">Merch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="bg-secondary">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-primary">"Join the Dolphins in 2026 – spots open now for all ages!"</h2>
+        </div>
+    </div>
+</Layout>
