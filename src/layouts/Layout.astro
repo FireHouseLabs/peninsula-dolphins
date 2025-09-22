@@ -1,12 +1,23 @@
 ---
 import '../styles/global.css';
 import dolphinLogo from '../assets/dolphin.png';
+import { SEO } from 'astro-seo';
 
 export interface Props {
 	title?: string;
+	description?: string;
+	image?: string;
+	noindex?: boolean;
 }
 
-const { title } = Astro.props;
+const { 
+	title,
+	description = "Peninsula Dolphins Rugby League Club - Building community, developing players, and growing the game on the Mornington Peninsula. Join our junior teams for the 2026 season!",
+	image = "/android-chrome-512x512.png",
+	noindex = false
+} = Astro.props;
+
+const siteTitle = title ? `${title} - Peninsula Dolphins RLFC` : 'Peninsula Dolphins RLFC';
 ---
 
 <!DOCTYPE html>
@@ -14,20 +25,105 @@ const { title } = Astro.props;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title ? `${title} - Peninsula Dolphins RLFC` : 'Peninsula Dolphins RLFC'}</title>
     
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-    
-    <!-- Meta tags -->
-    <meta name="description" content="Peninsula Dolphins Rugby League Club - Building community, developing players, and growing the game on the Mornington Peninsula. Join our junior teams for the 2026 season!">
-    <meta name="keywords" content="rugby league, peninsula, dolphins, mornington peninsula, junior rugby, kids rugby, hastings, victoria, australia">
-    <meta name="theme-color" content="#981335">
+    <SEO
+        title={siteTitle}
+        description={description}
+        canonical={Astro.url}
+        noindex={noindex}
+        openGraph={{
+            basic: {
+                title: siteTitle,
+                type: "website",
+                image: new URL(image, Astro.url).toString(),
+            },
+            optional: {
+                description: description,
+                siteName: "Peninsula Dolphins RLFC",
+                locale: "en_AU",
+            },
+            image: {
+                alt: "Peninsula Dolphins Rugby League Club Logo",
+            },
+        }}
+        twitter={{
+            creator: "@peninsula_dolphins_rlc",
+            site: "@peninsula_dolphins_rlc",
+            card: "summary_large_image",
+            title: siteTitle,
+            description: description,
+            image: new URL(image, Astro.url).toString(),
+            imageAlt: "Peninsula Dolphins Rugby League Club Logo",
+        }}
+        extend={{
+            meta: [
+                {
+                    name: "keywords",
+                    content: "rugby league, peninsula, dolphins, mornington peninsula, junior rugby, kids rugby, hastings, victoria, australia, sports club, youth sports"
+                },
+                {
+                    name: "author",
+                    content: "Peninsula Dolphins Rugby League Club"
+                },
+                {
+                    name: "robots",
+                    content: noindex ? "noindex, nofollow" : "index, follow"
+                },
+                {
+                    name: "theme-color",
+                    content: "#981335"
+                },
+                {
+                    name: "msapplication-TileColor",
+                    content: "#981335"
+                },
+                {
+                    property: "og:locale",
+                    content: "en_AU"
+                },
+                {
+                    property: "og:site_name",
+                    content: "Peninsula Dolphins RLFC"
+                }
+            ],
+            link: [
+                {
+                    rel: "icon",
+                    type: "image/x-icon",
+                    href: "/favicon.ico"
+                },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    sizes: "16x16",
+                    href: "/favicon-16x16.png"
+                },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    sizes: "32x32",
+                    href: "/favicon-32x32.png"
+                },
+                {
+                    rel: "apple-touch-icon",
+                    sizes: "180x180",
+                    href: "/apple-touch-icon.png"
+                },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    sizes: "192x192",
+                    href: "/android-chrome-192x192.png"
+                },
+                {
+                    rel: "icon",
+                    type: "image/png",
+                    sizes: "512x512",
+                    href: "/android-chrome-512x512.png"
+                }
+            ]
+        }}
+    />
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
