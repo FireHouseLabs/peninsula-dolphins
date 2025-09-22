@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Registration Form">
+    <div class="container mx-auto px-6 py-16 md:py-24 max-w-4xl">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-primary mb-4">Player Registration Form</h1>
+            <p class="text-lg text-zinc-600 leading-relaxed">Join the Peninsula Dolphins for the 2026 season! Please fill out the form below to register your child.</p>
+        </div>
+
+        <form class="bg-white rounded-xl shadow-lg p-8 md:p-12">
+            <!-- Parent/Guardian Details -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-zinc-200">Parent/Guardian Details</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="parent-first-name" class="block text-sm font-semibold text-zinc-700 mb-2">First Name *</label>
+                        <input type="text" id="parent-first-name" name="parent-first-name" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="parent-last-name" class="block text-sm font-semibold text-zinc-700 mb-2">Last Name *</label>
+                        <input type="text" id="parent-last-name" name="parent-last-name" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <label for="parent-email" class="block text-sm font-semibold text-zinc-700 mb-2">Email Address *</label>
+                        <input type="email" id="parent-email" name="parent-email" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="parent-phone" class="block text-sm font-semibold text-zinc-700 mb-2">Phone Number *</label>
+                        <input type="tel" id="parent-phone" name="parent-phone" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label for="parent-address" class="block text-sm font-semibold text-zinc-700 mb-2">Address *</label>
+                    <input type="text" id="parent-address" name="parent-address" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Street address">
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mt-6">
+                    <div>
+                        <label for="parent-suburb" class="block text-sm font-semibold text-zinc-700 mb-2">Suburb *</label>
+                        <input type="text" id="parent-suburb" name="parent-suburb" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="parent-state" class="block text-sm font-semibold text-zinc-700 mb-2">State *</label>
+                        <select id="parent-state" name="parent-state" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option value="">Select State</option>
+                            <option value="VIC">Victoria</option>
+                            <option value="NSW">New South Wales</option>
+                            <option value="QLD">Queensland</option>
+                            <option value="SA">South Australia</option>
+                            <option value="WA">Western Australia</option>
+                            <option value="TAS">Tasmania</option>
+                            <option value="NT">Northern Territory</option>
+                            <option value="ACT">Australian Capital Territory</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="parent-postcode" class="block text-sm font-semibold text-zinc-700 mb-2">Postcode *</label>
+                        <input type="text" id="parent-postcode" name="parent-postcode" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Player Details -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-zinc-200">Player Details</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="player-first-name" class="block text-sm font-semibold text-zinc-700 mb-2">First Name *</label>
+                        <input type="text" id="player-first-name" name="player-first-name" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="player-last-name" class="block text-sm font-semibold text-zinc-700 mb-2">Last Name *</label>
+                        <input type="text" id="player-last-name" name="player-last-name" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mt-6">
+                    <div>
+                        <label for="player-dob" class="block text-sm font-semibold text-zinc-700 mb-2">Date of Birth *</label>
+                        <input type="date" id="player-dob" name="player-dob" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <p class="text-xs text-zinc-500 mt-1">Used to determine age group placement</p>
+                    </div>
+                    <div>
+                        <label for="player-gender" class="block text-sm font-semibold text-zinc-700 mb-2">Gender *</label>
+                        <select id="player-gender" name="player-gender" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="player-school" class="block text-sm font-semibold text-zinc-700 mb-2">School</label>
+                        <input type="text" id="player-school" name="player-school" class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label for="rugby-experience" class="block text-sm font-semibold text-zinc-700 mb-2">Previous Rugby League Experience</label>
+                    <select id="rugby-experience" name="rugby-experience" class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option value="">Select Experience Level</option>
+                        <option value="none">No previous experience</option>
+                        <option value="beginner">Some experience (1 year or less)</option>
+                        <option value="intermediate">Intermediate (2-3 years)</option>
+                        <option value="experienced">Experienced (4+ years)</option>
+                    </select>
+                </div>
+
+                <div class="mt-6">
+                    <label for="medical-conditions" class="block text-sm font-semibold text-zinc-700 mb-2">Medical Conditions or Allergies</label>
+                    <textarea id="medical-conditions" name="medical-conditions" rows="3" class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Please list any medical conditions, allergies, or special requirements..."></textarea>
+                </div>
+            </div>
+
+            <!-- Emergency Contact -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-zinc-200">Emergency Contact</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="emergency-name" class="block text-sm font-semibold text-zinc-700 mb-2">Full Name *</label>
+                        <input type="text" id="emergency-name" name="emergency-name" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="emergency-relationship" class="block text-sm font-semibold text-zinc-700 mb-2">Relationship to Player *</label>
+                        <input type="text" id="emergency-relationship" name="emergency-relationship" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="e.g., Mother, Father, Grandparent">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <label for="emergency-phone" class="block text-sm font-semibold text-zinc-700 mb-2">Phone Number *</label>
+                        <input type="tel" id="emergency-phone" name="emergency-phone" required class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="emergency-email" class="block text-sm font-semibold text-zinc-700 mb-2">Email Address</label>
+                        <input type="email" id="emergency-email" name="emergency-email" class="w-full px-4 py-3 border border-zinc-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consent and Agreement -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-6 pb-2 border-b border-zinc-200">Consent & Agreement</h2>
+                
+                <div class="space-y-4">
+                    <label class="flex items-start space-x-3">
+                        <input type="checkbox" required class="mt-1 h-4 w-4 text-primary focus:ring-primary border-zinc-300 rounded">
+                        <span class="text-sm text-zinc-700">I consent to my child participating in Peninsula Dolphins Rugby League Club activities *</span>
+                    </label>
+                    
+                    <label class="flex items-start space-x-3">
+                        <input type="checkbox" required class="mt-1 h-4 w-4 text-primary focus:ring-primary border-zinc-300 rounded">
+                        <span class="text-sm text-zinc-700">I understand that rugby league involves physical contact and accept the associated risks *</span>
+                    </label>
+                    
+                    <label class="flex items-start space-x-3">
+                        <input type="checkbox" class="mt-1 h-4 w-4 text-primary focus:ring-primary border-zinc-300 rounded">
+                        <span class="text-sm text-zinc-700">I consent to photos/videos of my child being taken for club promotional purposes</span>
+                    </label>
+                    
+                    <label class="flex items-start space-x-3">
+                        <input type="checkbox" class="mt-1 h-4 w-4 text-primary focus:ring-primary border-zinc-300 rounded">
+                        <span class="text-sm text-zinc-700">I would like to receive club newsletters and updates via email</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="bg-primary text-white font-bold py-4 px-12 rounded-lg text-xl hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Submit Registration
+                </button>
+                <p class="text-sm text-zinc-500 mt-4">* Required fields</p>
+            </div>
+        </form>
+    </div>
+</Layout>
