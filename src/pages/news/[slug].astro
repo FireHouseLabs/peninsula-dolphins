@@ -1,0 +1,325 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Mock news articles data - this will be replaced with CMS data later
+const newsArticles = [
+    {
+        id: "season-2026-registration-open",
+        title: "2026 Season Registration Now Open!",
+        excerpt: "We're excited to announce that registration for the 2026 Peninsula Dolphins season is now open. Spots are available for Under 7s through to Under 12s, and we can't wait to welcome new players to our growing rugby league family.",
+        content: `
+            <p>We're excited to announce that registration for the 2026 Peninsula Dolphins season is now open! This marks an important milestone for our club as we prepare for our second year of operation.</p>
+            
+            <h2>What's Available</h2>
+            <p>We have spots available across all our junior age groups:</p>
+            <ul>
+                <li>Under 7s - Introduction to rugby league fundamentals</li>
+                <li>Under 8s - Basic skills development</li>
+                <li>Under 9s - Building game understanding</li>
+                <li>Under 10s - Competitive play introduction</li>
+                <li>Under 11s - Advanced skills and tactics</li>
+                <li>Under 12s - Full game experience</li>
+            </ul>
+            
+            <h2>What Makes the Dolphins Different</h2>
+            <p>At the Peninsula Dolphins, we're committed to providing every child with:</p>
+            <ul>
+                <li><strong>More game time</strong> - Our teams are designed to ensure no child spends too much time on the bench</li>
+                <li><strong>Qualified coaching</strong> - All our coaches are trained and passionate about developing young players</li>
+                <li><strong>Family atmosphere</strong> - We're building a club where families feel welcome and involved</li>
+                <li><strong>Skill development</strong> - Focus on individual improvement alongside team success</li>
+            </ul>
+            
+            <h2>How to Register</h2>
+            <p>Registration is simple and can be completed online through our registration form. Early bird pricing is available until January 31st, 2026.</p>
+            
+            <p>Don't miss out on being part of something special. Register today and help your child fall in love with the greatest game of all!</p>
+        `,
+        author: "Club Admin",
+        date: new Date("2024-12-15"),
+        image: "https://placehold.co/1200x600/981335/FFFFFF?text=Registration+Open",
+        featured: true
+    },
+    {
+        id: "first-training-session-success",
+        title: "First Training Session a Huge Success",
+        excerpt: "Our inaugural training session at Hastings Park was a fantastic success with over 30 young players turning up to learn the fundamentals of rugby league. The energy and enthusiasm from both players and parents was incredible.",
+        content: `
+            <p>Last Saturday marked a historic day for the Peninsula Dolphins as we held our very first training session at Hastings Park. The turnout exceeded all our expectations with over 30 young players eager to learn rugby league.</p>
+            
+            <h2>What Happened</h2>
+            <p>The session began at 9 AM with players arriving with their families, many trying rugby league for the first time. Our coaching team, led by Head Coach Mike Stevens, structured the session to focus on:</p>
+            <ul>
+                <li>Basic ball handling skills</li>
+                <li>Running techniques</li>
+                <li>Simple passing drills</li>
+                <li>Fun games to build teamwork</li>
+            </ul>
+            
+            <h2>Player Feedback</h2>
+            <p>"I loved learning how to pass the ball properly," said 8-year-old Emma, one of our new Under 9s players. "The coaches were really helpful and made it fun."</p>
+            
+            <p>Parent Sarah Johnson commented: "It's wonderful to see such a welcoming environment. The coaches clearly care about each child's development, not just winning games."</p>
+            
+            <h2>What's Next</h2>
+            <p>Training sessions will continue every second Saturday leading up to the season start in May. Our next session is scheduled for this weekend at the same time and location.</p>
+            
+            <p>If you missed our first session, don't worry! We welcome new players throughout the pre-season period.</p>
+        `,
+        author: "Coach Mike",
+        date: new Date("2024-11-28"),
+        image: "https://placehold.co/1200x600/c5a043/FFFFFF?text=First+Training",
+        featured: false
+    },
+    {
+        id: "sponsor-welcome-bendigo-bank",
+        title: "Welcome to Our New Community Partner - Bendigo Bank",
+        excerpt: "We're thrilled to announce that Community Bank Mount Martha has joined the Peninsula Dolphins family as a community partner. Their support will help us provide better facilities and equipment for our young players.",
+        content: `
+            <p>We're absolutely thrilled to announce that Community Bank Mount Martha has joined the Peninsula Dolphins family as our newest community partner!</p>
+            
+            <h2>About Our Partnership</h2>
+            <p>Community Bank Mount Martha has a long history of supporting local sports clubs and community initiatives throughout the Mornington Peninsula. Their commitment to grassroots rugby league aligns perfectly with our club's mission to grow the game locally.</p>
+            
+            <h2>How This Helps Our Players</h2>
+            <p>This partnership will directly benefit our young players through:</p>
+            <ul>
+                <li><strong>Equipment upgrades</strong> - New training equipment and safety gear</li>
+                <li><strong>Facility improvements</strong> - Better training facilities at Hastings Park</li>
+                <li><strong>Player development programs</strong> - Additional coaching resources and workshops</li>
+                <li><strong>Community events</strong> - Family-friendly activities throughout the season</li>
+            </ul>
+            
+            <h2>A Message from Community Bank Mount Martha</h2>
+            <p>"We're excited to support the Peninsula Dolphins and their mission to provide rugby league opportunities for local children," said Branch Manager Lisa Chen. "Community sport is vital for bringing families together and teaching valuable life skills. We're proud to be part of the Dolphins' journey."</p>
+            
+            <h2>Thank You</h2>
+            <p>We extend our heartfelt thanks to Community Bank Mount Martha for their generous support. Partnerships like this are what make community sport possible and help us achieve our goal of developing not just great players, but great people.</p>
+            
+            <p>We look forward to a long and successful partnership!</p>
+        `,
+        author: "Club President",
+        date: new Date("2024-11-20"),
+        image: "https://placehold.co/1200x600/333333/FFFFFF?text=New+Partner",
+        featured: false
+    },
+    {
+        id: "club-officially-founded",
+        title: "Peninsula Dolphins Rugby League Club Officially Founded",
+        excerpt: "Today marks a historic day for rugby league on the Mornington Peninsula as the Peninsula Dolphins Rugby League Club is officially founded. We're here to grow the game and provide opportunities for junior players in our local community.",
+        content: `
+            <p>Today marks a truly historic day for rugby league on the Mornington Peninsula. After months of planning, community consultations, and preparation, the Peninsula Dolphins Rugby League Club is officially founded!</p>
+            
+            <h2>Our Vision</h2>
+            <p>The Peninsula Dolphins was founded with a clear vision: to provide local children with the opportunity to play, learn, and love rugby league in a supportive, family-friendly environment.</p>
+            
+            <p>Rugby league has a proud tradition across Australia, but opportunities for junior players on the Mornington Peninsula have been limited. We're here to change that.</p>
+            
+            <h2>Why the Dolphins?</h2>
+            <p>Our name reflects our connection to the Peninsula's beautiful coastline and marine environment. Like dolphins, we believe in working together as a team, supporting each other, and enjoying what we do.</p>
+            
+            <h2>Our Founding Principles</h2>
+            <ul>
+                <li><strong>Inclusivity</strong> - Every child is welcome, regardless of experience or ability</li>
+                <li><strong>Development</strong> - Focus on individual growth and skill development</li>
+                <li><strong>Community</strong> - Building lasting friendships and family connections</li>
+                <li><strong>Fun</strong> - Ensuring every child enjoys their rugby league experience</li>
+                <li><strong>Respect</strong> - For players, coaches, officials, and opponents</li>
+            </ul>
+            
+            <h2>What's Next</h2>
+            <p>Over the coming months, we'll be:</p>
+            <ul>
+                <li>Recruiting coaches and volunteers</li>
+                <li>Securing training facilities and equipment</li>
+                <li>Opening registration for our inaugural 2026 season</li>
+                <li>Building partnerships with local businesses and organizations</li>
+                <li>Organizing community events and fundraisers</li>
+            </ul>
+            
+            <h2>Join Our Journey</h2>
+            <p>Whether you're a parent looking for a sport for your child, a former player wanting to give back through coaching, or a local business interested in supporting community sport, we'd love to hear from you.</p>
+            
+            <p>This is just the beginning of our story. Together, we'll build something special for the Peninsula community.</p>
+            
+            <p><strong>Welcome to the Peninsula Dolphins family!</strong></p>
+        `,
+        author: "Founding Committee",
+        date: new Date("2024-10-15"),
+        image: "https://placehold.co/1200x600/981335/FFFFFF?text=Club+Founded",
+        featured: false
+    }
+];
+
+export async function getStaticPaths() {
+    // Re-define newsArticles here for the static paths function
+    const articles = [
+        { id: "season-2026-registration-open" },
+        { id: "first-training-session-success" },
+        { id: "sponsor-welcome-bendigo-bank" },
+        { id: "club-officially-founded" }
+    ];
+    
+    return articles.map(article => ({
+        params: { slug: article.id }
+    }));
+}
+
+const { slug } = Astro.params;
+const article = newsArticles.find(article => article.id === slug);
+
+if (!article) {
+    return Astro.redirect('/news');
+}
+
+// Format date for display
+function formatDate(date: Date): string {
+    return date.toLocaleDateString('en-AU', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    });
+}
+
+// Get related articles (excluding current article)
+const relatedArticles = newsArticles
+    .filter(a => a.id !== article.id)
+    .sort((a, b) => b.date.getTime() - a.date.getTime())
+    .slice(0, 3);
+---
+
+<Layout 
+    title={article.title}
+    description={article.excerpt}
+    image={article.image}
+>
+    <article class="container mx-auto px-6 py-16 md:py-24 max-w-4xl">
+        <!-- Article Header -->
+        <header class="mb-8">
+            <div class="text-center mb-8">
+                <span class="inline-block bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full uppercase tracking-wide mb-4">
+                    News Article
+                </span>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-zinc-800 leading-tight mb-4">
+                    {article.title}
+                </h1>
+                <div class="flex items-center justify-center space-x-4 text-zinc-500">
+                    <span>By {article.author}</span>
+                    <span>•</span>
+                    <time datetime={article.date.toISOString()}>{formatDate(article.date)}</time>
+                </div>
+            </div>
+            
+            <img 
+                src={article.image} 
+                alt={article.title}
+                class="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg mb-8"
+            >
+        </header>
+
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none">
+            <div class="text-xl text-zinc-600 leading-relaxed mb-8 p-6 bg-zinc-50 rounded-lg border-l-4 border-primary">
+                {article.excerpt}
+            </div>
+            
+            <div class="article-content text-zinc-700 leading-relaxed" set:html={article.content}></div>
+        </div>
+
+        <!-- Article Footer -->
+        <footer class="mt-12 pt-8 border-t border-zinc-200">
+            <div class="flex items-center justify-between">
+                <a 
+                    href="/news" 
+                    class="inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors duration-300"
+                >
+                    <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to News
+                </a>
+                
+                <div class="flex space-x-4">
+                    <span class="text-zinc-500 text-sm">Share:</span>
+                    <a href={`https://facebook.com/sharer/sharer.php?u=${Astro.url}`} target="_blank" class="text-zinc-400 hover:text-primary transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.494v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                        </svg>
+                    </a>
+                    <a href={`https://twitter.com/intent/tweet?url=${Astro.url}&text=${article.title}`} target="_blank" class="text-zinc-400 hover:text-primary transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </article>
+
+    <!-- Related Articles -->
+    {relatedArticles.length > 0 && (
+        <section class="bg-zinc-50 py-16">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <h2 class="text-3xl font-bold text-center text-zinc-800 mb-12">Related Articles</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    {relatedArticles.map(related => (
+                        <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                            <img src={related.image} alt={related.title} class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <div class="text-xs text-zinc-500 mb-2">{formatDate(related.date)}</div>
+                                <h3 class="text-lg font-bold text-zinc-800 mb-2 line-clamp-2">{related.title}</h3>
+                                <p class="text-zinc-600 text-sm leading-relaxed mb-4 line-clamp-2">{related.excerpt}</p>
+                                <a href={`/news/${related.id}`} class="text-primary font-semibold hover:text-primary-dark transition-colors duration-300">
+                                    Read More →
+                                </a>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+    )}
+</Layout>
+
+<style>
+.article-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #981335;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.article-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+}
+
+.article-content strong {
+    color: #981335;
+    font-weight: 600;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style>
