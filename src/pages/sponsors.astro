@@ -1,5 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import tallonLogo from '../assets/sponsors/2 - Tallon - Reverse.png';
+import geonbaeLogo from '../assets/sponsors/GEONBAE KOREAN BBQ BUFFET.png';
+import goldlineLogo from '../assets/sponsors/Goldline Logo.jpg';
+import somervilleBarbersLogo from '../assets/sponsors/Somerville Barbers.jpg';
+import bendigoBankLogo from '../assets/sponsors/bbl.jpg';
 ---
 
 <Layout 
@@ -31,10 +36,18 @@ import Layout from '../layouts/Layout.astro';
             <div>
                 <h2 class="text-3xl font-bold text-center text-secondary mb-8">Gold Sponsors</h2>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video"><img src="https://placehold.co/200x100/cccccc/333333?text=Gold+Sponsor" alt="Gold Sponsor"></div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video"><img src="https://placehold.co/200x100/cccccc/333333?text=Gold+Sponsor" alt="Gold Sponsor"></div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video"><img src="https://placehold.co/200x100/cccccc/333333?text=Gold+Sponsor" alt="Gold Sponsor"></div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video"><img src="https://placehold.co/200x100/cccccc/333333?text=Gold+Sponsor" alt="Gold Sponsor"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video">
+                        <img src={tallonLogo.src} alt="Tallon" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video">
+                        <img src={geonbaeLogo.src} alt="Geonbae Korean BBQ Buffet" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video">
+                        <img src={goldlineLogo.src} alt="Goldline" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg flex items-center justify-center aspect-video">
+                        <img src={somervilleBarbersLogo.src} alt="Somerville Barbers" class="max-w-full max-h-full object-contain">
+                    </div>
                 </div>
             </div>
 
@@ -51,7 +64,9 @@ import Layout from '../layouts/Layout.astro';
                 <div>
                     <h2 class="text-3xl font-bold text-center text-zinc-600 mb-8">Community Partners</h2>
                     <div class="grid grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Partner" alt="Community Partner"></div>
+                        <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video">
+                            <img src={bendigoBankLogo.src} alt="Community Bank Mount Martha" class="max-w-full max-h-full object-contain">
+                        </div>
                         <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Partner" alt="Community Partner"></div>
                         <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center aspect-video"><img src="https://placehold.co/150x80/cccccc/333333?text=Partner" alt="Community Partner"></div>
                     </div>
