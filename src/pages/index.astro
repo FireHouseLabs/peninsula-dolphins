@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import heroImage from '../assets/home_hero.jpg';
+import rugbyBallIcon from '../assets/rugby_ball.svg';
 ---
 
 <Layout 
@@ -25,7 +26,10 @@ import heroImage from '../assets/home_hero.jpg';
                 </p>
                 <!-- Primary CTA -->
                 <div class="mb-8">
-                    <a href="/registration-form" class="inline-block bg-primary text-white font-bold py-6 px-12 rounded-lg text-xl hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 shadow-lg">Register Now</a>
+                    <a href="/registration-form" class="inline-flex items-center gap-3 bg-primary text-white font-bold py-6 px-12 rounded-lg text-xl hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        <img src={rugbyBallIcon.src} alt="Rugby Ball" class="w-6 h-6 rugby-ball-icon">
+                        Register Now
+                    </a>
                 </div>
                 <!-- Secondary Links -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -44,3 +48,20 @@ import heroImage from '../assets/home_hero.jpg';
         </div>
     </div>
 </Layout>
+
+<style>
+.rugby-ball-icon {
+    filter: brightness(0) saturate(100%) invert(82%) sepia(68%) saturate(401%) hue-rotate(354deg) brightness(95%) contrast(90%);
+    transition: filter 0.3s ease;
+}
+
+/* Gold color filter for the rugby ball icon */
+.rugby-ball-icon {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(34%) saturate(1280%) hue-rotate(2deg) brightness(102%) contrast(89%);
+}
+
+/* Hover effect to make the icon slightly brighter */
+a:hover .rugby-ball-icon {
+    filter: brightness(0) saturate(100%) invert(85%) sepia(34%) saturate(1280%) hue-rotate(2deg) brightness(112%) contrast(95%);
+}
+</style>
